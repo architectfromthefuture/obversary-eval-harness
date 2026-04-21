@@ -1,0 +1,5 @@
+{"id": "sentiment_001", "input": "I loved this movie.", "expected": "positive"}
+{"id": "sentiment_002", "input": "This was terrible.", "expected": "negative"}
+{"id": "sentiment_003", "input": "It was okay.", "expected": "neutral"}
+{"id": "sentiment_004", "input": "Absolutely fantastic experience.", "expected": "positive"}
+{"id": "sentiment_005", "input": "Bad service and awful food.", "expected": "negative"}

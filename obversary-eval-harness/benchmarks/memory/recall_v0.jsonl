@@ -1,0 +1,3 @@
+{"id": "memory_001", "input": "Brian saved project notes under memory-dropbox. Question: Where were the notes saved?", "expected": "memory-dropbox"}
+{"id": "memory_002", "input": "The API service runs with FastAPI. Question: What framework runs the API service?", "expected": "FastAPI"}
+{"id": "memory_003", "input": "The vector database selected was Qdrant. Question: What vector database was selected?", "expected": "Qdrant"}
