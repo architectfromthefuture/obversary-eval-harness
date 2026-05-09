@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run an evaluation from the repo root: python scripts/run_eval.py"""
+"""Run an evaluation from the repo root: python3 scripts/run_eval.py"""
 
 from __future__ import annotations
 

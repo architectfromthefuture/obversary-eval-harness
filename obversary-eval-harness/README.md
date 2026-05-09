@@ -35,7 +35,7 @@ Roughly:
 From the **repository root**:
 
 ```bash
-python scripts/run_eval.py
+python3 scripts/run_eval.py
 ```
 
 ### Options (v0.2.0)
@@ -50,11 +50,11 @@ python scripts/run_eval.py
 Examples:
 
 ```bash
-python scripts/run_eval.py --output results/my_run.json
+python3 scripts/run_eval.py --output results/my_run.json
 ```
 
 ```bash
-python scripts/run_eval.py \
+python3 scripts/run_eval.py \
   --benchmark benchmarks/memory/recall_v0.jsonl \
   --system dummy-memory \
   --scorer exact \
