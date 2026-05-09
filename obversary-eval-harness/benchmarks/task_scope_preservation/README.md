@@ -71,6 +71,8 @@ and give the user the shortest useful path to action.
 | `rubric.md` | YES/NO rubric for deciding whether a response preserves task scope. |
 | `failure_taxonomy.md` | Boundary failure labels used to diagnose workflow collapse. |
 | `judges/task_scope_preservation_judge.md` | Judge prompt for structured behavioral assessment. |
+| `judges/graded_behavior_judge.md` | Phase B judge prompt for graded behavioral assessment. |
+| `judges/hidden_error_judge.md` | Phase B judge prompt for hidden task-scope errors. |
 | `examples/positive_examples.md` | Examples of scope-preserving assistant behavior. |
 | `examples/negative_examples.md` | Examples of narrow, technically plausible failures. |
 | `docs/open_benchmark_submission_draft.md` | Submission draft for external benchmark review. |

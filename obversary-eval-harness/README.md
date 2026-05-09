@@ -6,8 +6,6 @@ A small, **stdlib-only** Python project that shows how to run a **repeatable eva
 
 The goal is **repeatable evaluation evidence**: same tasks, same procedure, so results are comparable over time or across systems. This repository is intentionally minimal so beginners can read the whole flow in an afternoon.
 
-The repo is also beginning to host behavioral benchmark artifacts. The first is **Task-Scope Preservation**, a benchmark for evaluating whether an AI assistant preserves a user's project-level objective instead of collapsing into one narrow subtask. That benchmark is documented as a submission-ready artifact first; full transcript execution and judge automation can grow from the existing harness later.
-
 ## What an evaluation harness is
 
 Roughly:
@@ -24,7 +22,6 @@ Roughly:
 | Path | Role |
 |------|------|
 | `benchmarks/` | JSONL task files (`id`, `input`, `expected` per line). |
-| `benchmarks/task_scope_preservation/` | Behavioral benchmark docs, prompt data, rubric, judge prompt, and failure taxonomy for Task-Scope Preservation v0. |
 | `systems/` | Implementations you evaluate (`BaselineClassifier`, `DummyMemorySystem`, …). |
 | `evaluator/` | Loading tasks, running, scoring, metrics, and reports. |
 | `scripts/` | Command-line entry points (`run_eval.py`). |
@@ -35,7 +32,7 @@ Roughly:
 From the **repository root**:
 
 ```bash
-python3 scripts/run_eval.py
+python scripts/run_eval.py
 ```
 
 ### Options (v0.2.0)
@@ -50,11 +47,11 @@ python3 scripts/run_eval.py
 Examples:
 
 ```bash
-python3 scripts/run_eval.py --output results/my_run.json
+python scripts/run_eval.py --output results/my_run.json
 ```
 
 ```bash
-python3 scripts/run_eval.py \
+python scripts/run_eval.py \
   --benchmark benchmarks/memory/recall_v0.jsonl \
   --system dummy-memory \
   --scorer exact \
@@ -104,9 +101,7 @@ The runner only needs something that follows the `System` protocol in `evaluator
 
 ### `task_scope_preservation` (behavioral benchmark artifact)
 
-[`benchmarks/task_scope_preservation/`](benchmarks/task_scope_preservation/) contains Task-Scope Preservation v0: a prompt set, schema, binary rubric, judge prompt, positive/negative examples, failure taxonomy, submission draft, and Phase B methodology scaffolding.
-
-TSP evaluates whether an assistant preserves the user's project-level objective across a constrained workflow instead of answering only the most visible subtask. It is intentionally not wired into the simple exact-match runner yet; it needs transcript capture and rubric/judge scoring rather than answer-key comparison.
+[`benchmarks/task_scope_preservation/`](benchmarks/task_scope_preservation/) contains Task-Scope Preservation v0, a behavioral benchmark artifact for evaluating whether an assistant preserves the user's project-level objective instead of collapsing into one visible subtask. It is not wired into the simple exact-match runner yet.
 
 ## Systems included
 

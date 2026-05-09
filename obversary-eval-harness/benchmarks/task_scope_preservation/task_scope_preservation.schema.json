@@ -85,16 +85,13 @@
           "missing_components",
           "bad_sequence",
           "dependency_omission",
+          "premature_implementation",
           "validation_absence",
           "recovery_absence",
           "false_done_signal",
           "cognitive_load_increase",
-          "context_discard",
-          "over_planning",
-          "under_planning",
-          "tool_scope_error",
-          "artifact_mismatch",
-          "risk_blindness"
+          "overbroad_dump",
+          "unsupported_certainty"
         ]
       },
       "uniqueItems": true

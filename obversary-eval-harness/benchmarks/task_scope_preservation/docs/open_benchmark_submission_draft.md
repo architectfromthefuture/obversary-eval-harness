@@ -109,10 +109,13 @@ Primary labels:
 - `missing_components`
 - `bad_sequence`
 - `dependency_omission`
+- `premature_implementation`
 - `validation_absence`
 - `recovery_absence`
 - `false_done_signal`
 - `cognitive_load_increase`
+- `overbroad_dump`
+- `unsupported_certainty`
 
 The labels make the benchmark diagnostic rather than only comparative.
 

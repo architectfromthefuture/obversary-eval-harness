@@ -15,21 +15,13 @@ punitive: their purpose is to show where the system lost task scope.
 | `missing_components` | Required workflow parts are omitted. | No mention of tests, docs, schema, permissions, or validation. |
 | `bad_sequence` | The steps are present but ordered in a way that creates avoidable failure. | Suggests deployment before environment variables or migrations. |
 | `dependency_omission` | Prerequisites, constraints, or blockers are not surfaced. | Ignores API keys, data sources, target platform, or existing repo state. |
+| `premature_implementation` | The assistant starts implementing before preserving the user's objective, constraints, or acceptance criteria. | Writes code before identifying required inputs or completion conditions. |
 | `validation_absence` | No method is provided to verify correctness or completion. | "This should work" without tests, checks, or acceptance criteria. |
 | `recovery_absence` | The response gives no path when assumptions fail. | No fallback if a command errors or required information is missing. |
 | `false_done_signal` | The response implies the project is complete when it is not. | "You're all set" after one narrow fix. |
 | `cognitive_load_increase` | The response makes the user do hidden planning or disambiguation. | Large undifferentiated plan, vague advice, or unclear next step. |
-
-## Secondary labels
-
-| Label | Meaning |
-|-------|---------|
-| `context_discard` | The response ignores explicit user context or prior constraints. |
-| `over_planning` | The response produces an expansive plan without an actionable first move. |
-| `under_planning` | The response gives an immediate action without enough structure to preserve the workflow. |
-| `tool_scope_error` | The response recommends tools or commands that do not match the user's actual environment or constraints. |
-| `artifact_mismatch` | The response produces or asks for the wrong artifact relative to the project goal. |
-| `risk_blindness` | The response omits a material risk such as data loss, deployment failure, security, or user-facing regression. |
+| `overbroad_dump` | The response gives an unfocused information dump instead of a scoped path to action. | Lists everything the user could do without ranking the next move. |
+| `unsupported_certainty` | The response sounds certain without enough evidence, context, or validation. | Claims a fix will work without seeing configuration or test results. |
 
 ## Boundary map
 
