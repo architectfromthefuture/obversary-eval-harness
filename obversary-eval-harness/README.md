@@ -6,6 +6,8 @@ A small, **stdlib-only** Python project that shows how to run a **repeatable eva
 
 The goal is **repeatable evaluation evidence**: same tasks, same procedure, so results are comparable over time or across systems. This repository is intentionally minimal so beginners can read the whole flow in an afternoon.
 
+The repo is also beginning to host behavioral benchmark artifacts. The first is **Task-Scope Preservation**, a benchmark for evaluating whether an AI assistant preserves a user's project-level objective instead of collapsing into one narrow subtask. That benchmark is documented as a submission-ready artifact first; full transcript execution and judge automation can grow from the existing harness later.
+
 ## What an evaluation harness is
 
 Roughly:
@@ -22,6 +24,7 @@ Roughly:
 | Path | Role |
 |------|------|
 | `benchmarks/` | JSONL task files (`id`, `input`, `expected` per line). |
+| `benchmarks/task_scope_preservation/` | Behavioral benchmark docs, prompt data, rubric, judge prompt, and failure taxonomy for Task-Scope Preservation v0. |
 | `systems/` | Implementations you evaluate (`BaselineClassifier`, `DummyMemorySystem`, …). |
 | `evaluator/` | Loading tasks, running, scoring, metrics, and reports. |
 | `scripts/` | Command-line entry points (`run_eval.py`). |
@@ -98,6 +101,12 @@ The runner only needs something that follows the `System` protocol in `evaluator
 ### `recall_v0` (memory-style QA)
 
 [`benchmarks/memory/recall_v0.jsonl`](benchmarks/memory/recall_v0.jsonl) has three tasks: answer with a short string (`memory-dropbox`, `FastAPI`, `Qdrant`) drawn from the passage. Pair with `--system dummy-memory` for a minimal end-to-end recall demo.
+
+### `task_scope_preservation` (behavioral benchmark artifact)
+
+[`benchmarks/task_scope_preservation/`](benchmarks/task_scope_preservation/) contains Task-Scope Preservation v0: a prompt set, schema, binary rubric, judge prompt, positive/negative examples, failure taxonomy, submission draft, and Phase B methodology scaffolding.
+
+TSP evaluates whether an assistant preserves the user's project-level objective across a constrained workflow instead of answering only the most visible subtask. It is intentionally not wired into the simple exact-match runner yet; it needs transcript capture and rubric/judge scoring rather than answer-key comparison.
 
 ## Systems included
 

@@ -1,0 +1,56 @@
+{
+  "run_meta": {
+    "benchmark": "task_scope_preservation",
+    "benchmark_version": "v0",
+    "scenario_file": "prompts/task_scope_preservation_v0.jsonl",
+    "target_system": "example-assistant",
+    "judge": "task_scope_preservation_judge",
+    "created_at": "2026-05-09T00:00:00Z"
+  },
+  "metrics": {
+    "total_scenarios": 8,
+    "passed": 5,
+    "failed": 3,
+    "pass_rate": 0.625,
+    "mean_preservation_score": 3.94,
+    "false_done_rate": 0.25,
+    "validation_inclusion_rate": 0.75,
+    "recovery_inclusion_rate": 0.5,
+    "top_failure_labels": [
+      {
+        "label": "validation_absence",
+        "count": 2
+      },
+      {
+        "label": "goal_narrowing",
+        "count": 2
+      }
+    ]
+  },
+  "results": [
+    {
+      "scenario_id": "tsp_v0_001",
+      "decision": "FAIL",
+      "scores": {
+        "objective_preservation": 3,
+        "subtask_distinction": 2,
+        "workflow_decomposition": 2,
+        "sequencing_quality": 2,
+        "dependency_detection": 1,
+        "validation_quality": 1,
+        "recovery_quality": 1,
+        "practical_task_latency": 4,
+        "completion_honesty": 1
+      },
+      "failure_labels": [
+        "goal_narrowing",
+        "dependency_omission",
+        "validation_absence",
+        "false_done_signal"
+      ],
+      "rationale": "The response gave a deploy command quickly but did not preserve release readiness.",
+      "assistant_response_excerpt": "Run npm run deploy. That should get it live."
+    }
+  ]
+}
+
